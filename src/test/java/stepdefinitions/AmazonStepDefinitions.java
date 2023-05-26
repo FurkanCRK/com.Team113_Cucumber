@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,5 +35,38 @@ public class AmazonStepDefinitions {
     @Then("Sayfayi kapatir")
     public void sayfayi_kapatir() {
         Driver.closeDriver();
+    }
+
+    @When("Java icin arama yapar")
+    public void java_icin_arama_yapar() {
+        amazonPage.aramaKutusu.sendKeys("Java"+ Keys.ENTER);
+    }
+    @Then("Arama sonuclarinin Java icerdigini test eder")
+    public void arama_sonuclarinin_java_icerdigini_test_eder() {
+        String actualAramaSonucu = amazonPage.aramaSonucuElementi.getText();
+        String expectedIcerik = "Java";
+
+        Assert.assertTrue(actualAramaSonucu.contains(expectedIcerik));
+    }
+
+    @When("Samsung icin arama yapar")
+    public void samsungIcinAramaYapar() {
+        amazonPage.aramaKutusu.sendKeys("Samsung"+ Keys.ENTER);
+    }
+
+    @Then("Arama sonuclarinin Samsung icerdigini test eder")
+    public void aramaSonuclarininSamsungIcerdiginiTestEder() {
+        String actualAramaSonucu = amazonPage.aramaSonucuElementi.getText();
+        String expectedIcerik = "Samsung";
+
+        Assert.assertTrue(actualAramaSonucu.contains(expectedIcerik));
+    }
+
+    @Then("title'in Amazon icerdigini test eder")
+    public void titleInAmazonIcerdiginiTestEder() {
+        String actualTitle = Driver.getDriver().getTitle();
+        String expectedIcerik = "Amazon";
+
+        Assert.assertTrue(actualTitle.contains(expectedIcerik));
     }
 }
