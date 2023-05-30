@@ -100,4 +100,15 @@ public class AmazonStepDefinitions {
         } catch (InterruptedException e) {
         }
     }
+
+    @Then("ilk urune click yapar")
+    public void ilk_urune_click_yapar() {
+        amazonPage.ilkUrunElementi.click();
+    }
+    @Then("acilan urun isiminin {string} icerdigini test eder")
+    public void acilan_urun_isiminin_icerdigini_test_eder(String arananKelime) {
+        String actualUrunIsim = amazonPage.ilkUrunIsimElementi.getText();
+
+        Assert.assertTrue(actualUrunIsim.contains(arananKelime));
+    }
 }
