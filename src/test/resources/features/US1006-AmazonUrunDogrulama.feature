@@ -1,5 +1,5 @@
 Feature: US1006 Amazonda aranan urun dogrulamasi
-  @wip
+
   Scenario: TC12 Aranan urunun dogru oldugu test edilebilmeli
 
     Given Kullanici "amazonUrl" anasayfaya gider
