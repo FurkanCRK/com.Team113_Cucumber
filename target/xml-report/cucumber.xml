@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="7.345" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="US1010 Kullanici yanlis email ile sisteme giris yapamaz" name="TC16 eksik email ile sisteme giria yapilamaz" time="7.211">
+<system-out><![CDATA[
+Given Kullanici "autoUrl" anasayfaya gider..................................passed
+Then user sign up linkine tiklar............................................passed
+And Login to your account blumunde email kutusuna @isareti olmayan email adresi yazar.passed
+And password kutusuna sifre yaar ve enter'a tiklar..........................passed
+Then sisteme giris yapilamadigini test eder.................................passed
+]]></system-out>
+</testcase>
+</testsuite>
