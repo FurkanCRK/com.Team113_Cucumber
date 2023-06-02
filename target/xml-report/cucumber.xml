@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="7.352" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="US1011 Kullanici web tablosundaki sirketlei yazdirir" name="TC17 Kullanici listeyi yazdirir ve aranan sirketin varligini test eder" time="7.185">
+<testsuite name="Cucumber" time="19.879" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="US1012 Kullanici istedigi firmanin onceki gunki kapanis degerini okur" name="TC18 DCB'nin onceki kapanis degerini test eder" time="19.608">
+<failure type="org.openqa.selenium.NoSuchElementException" message="Unable to find element with locator By.xpath: //iframe[@class='faktor-iframe-wrapper']
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.9.1', revision: 'eb2032df7f'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: driver.version: RemoteWebDriver">
+<![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //iframe[@class='faktor-iframe-wrapper']
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.9.1', revision: 'eb2032df7f'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy23.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:1021)
+	at stepdefinitions.GuruStepdefinitions.guru99_sayfasinda_cookies_kabul_eder(GuruStepdefinitions.java:23)
+	at ✽.guru99 sayfasinda Cookies kabul eder(file:///C:/Users/Furkan/IdeaProjects/com.Team113_Cucumber/src/test/resources/features/US1012_Guru99PreviousClose.feature:8)
+]]>
+</failure>
 <system-out><![CDATA[
 Given Kullanici "guruUrl" anasayfaya gider..................................passed
-Then 2 saniye bekler........................................................passed
-Then Company listesini consola yazdirir.....................................passed
-And listede "DCB Bank" oldugunu test eder...................................passed
-Then tum sayfa Screenshot alir..............................................passed
-And Sayfayi kapatir.........................................................passed
+Then guru99 sayfasinda Cookies kabul eder...................................failed
+And "DCB Bank" Prev.Close degerini yazdirir.................................skipped
+Then tum sayfa Screenshot alir..............................................skipped
+And Sayfayi kapatir.........................................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

@@ -8,10 +8,10 @@ import utilities.Driver;
 import java.util.List;
 
 public class Guru99Page {
-
     public Guru99Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
     @FindBy(xpath = "//*[text()='Accept All']")
     public WebElement acceptCookies;
 
@@ -23,9 +23,5 @@ public class Guru99Page {
 
     @FindBy(xpath = "//tbody/tr")
     public List<WebElement> satirlarListesi;
-
-
-
-
 
 }
