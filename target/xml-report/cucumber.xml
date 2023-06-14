@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="34.178" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="US2002 AutomationEx" name="TC12 sorusu" time="34.042">
+<testsuite name="Cucumber" time="4.214" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="US2003 Takim Calismasi 03" name="Test 03" time="4.029">
 <system-out><![CDATA[
-* Navigate to url "autoUrl".................................................passed
-* Verify that home page is visible successfully.............................passed
-* Click Products button.....................................................passed
-* Hover over first product and click "Add to cart"..........................passed
-* Click Continue Shopping button............................................passed
-* Hover over second product and click "Add to cart".........................passed
-* Click View Cart button....................................................passed
-* Verify both products are added to Cart....................................passed
-* Verify their prices, quantity and total price.............................passed
-* Sayfayi kapatir...........................................................passed
+* Kullanici "editorUrl" anasayfaya gider....................................passed
+* New butonuna basar........................................................passed
+* Tum bilgileri girer.......................................................passed
+* Create tusuna basar.......................................................passed
+* Kullanici ilk isim ile arama yapar........................................passed
+* Isim bolumunde isminin oldugunu dogrular..................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
