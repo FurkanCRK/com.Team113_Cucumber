@@ -38,4 +38,28 @@ public class AutoExerPage {
     @FindBy(xpath = "//input[@data-qa='login-password']")
     public WebElement loginPasswordKutusu;
 
+    @FindBy (xpath = "//*[@lang='en']")
+    public WebElement anasayfaGorunurElementi;
+
+    @FindBy (xpath = "//*[@href='/products']")
+    public WebElement productsElementi;
+
+    @FindBy (xpath = "(//*[@data-product-id='1'])[2]")
+    public WebElement addToCartButton;
+
+    @FindBy (xpath = "//*[@data-dismiss='modal']")
+    public WebElement continueShoppingButton;
+
+    @FindBy (xpath = "(//*[@class='product-overlay'])[2]")
+    public WebElement ikinciProductsElementi;
+
+    @FindBy (xpath = "(//*[@data-product-id='2'])[2]")
+    public WebElement ikinciUrunAddButonu;
+
+
+    @FindBy (xpath = "//*[text()='View Cart']")
+    public WebElement viewCartButton;
+    @FindBy (xpath = "//tbody")
+    public WebElement ikiUrunDogrulama;
+
 }

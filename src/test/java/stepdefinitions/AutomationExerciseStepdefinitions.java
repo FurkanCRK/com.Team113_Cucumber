@@ -5,10 +5,16 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.AutoExerPage;
+import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
+
+import java.util.Collections;
 
 public class AutomationExerciseStepdefinitions {
 
@@ -98,4 +104,70 @@ public class AutomationExerciseStepdefinitions {
     public void sistemeGirisYapilamadiginiTestEder() {
         Assert.assertTrue(autoExerPage.loginPasswordKutusu.isEnabled());
     }
+
+    @Given("Navigate to url {string}")
+    public void navigate_to_url(String gidilecekSayfa) {
+        Driver.getDriver().get(ConfigReader.getProperty(gidilecekSayfa));
+
+    }
+    @Given("Verify that home page is visible successfully")
+    public void verify_that_home_page_is_visible_successfully() {
+        Assert.assertTrue(autoExerPage.anasayfaGorunurElementi.isDisplayed());
+
+    }
+    @Given("Click Products button")
+    public void Click_Products_button(){
+        autoExerPage.productsElementi.click();
+    }
+
+    @Given("Click Continue Shopping button")
+    public void Click_Continue_Shopping_button(){
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        ReusableMethods.bekle(3);
+        jse.executeScript("arguments[0].scrollIntoView(true);"
+                + "arguments[0].click()",autoExerPage.continueShoppingButton);
+
+    }
+
+    @Given("Click View Cart button")
+    public void Click_View_Cart_button(){
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("arguments[0].scrollIntoView(true);"
+                + "arguments[0].click()",autoExerPage.viewCartButton);
+    }
+
+    @Given("Hover over first product and click {string}")
+    public void hover_over_first_product_and_click(String string) {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+
+
+        ReusableMethods.hover(autoExerPage.addToCartButton);
+        jse.executeScript("arguments[0].scrollIntoView(true);"
+                + "arguments[0].click()",autoExerPage.addToCartButton);
+
+
+    }
+    @Given("Hover over second product and click {string}")
+    public void hover_over_second_product_and_click(String string) {
+
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        ReusableMethods.bekle(5);
+        //ReusableMethods.hover(autoExerPage.ikinciProductsElementi);
+        jse.executeScript("arguments[0].scrollIntoView(true);",autoExerPage.ikinciProductsElementi);
+
+        autoExerPage.ikinciUrunAddButonu.click();
+
+
+    }
+    @Given("Verify both products are added to Cart")
+    public void verify_both_products_are_added_to_cart() {
+        Assert.assertTrue(autoExerPage.ikiUrunDogrulama.isDisplayed());
+
+    }
+    @Given("Verify their prices, quantity and total price")
+    public void verify_their_prices_quantity_and_total_price() {
+        Assert.assertTrue(autoExerPage.ikiUrunDogrulama.isDisplayed());
+
+    }
+
 }
